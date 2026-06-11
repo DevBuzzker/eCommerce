@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -43,7 +44,9 @@ const Home = () => {
               borderRadius: "8px",
             }}
           >
-            <h3>{product.title}</h3>
+            <NavLink to={"products/" + product.id}>
+              <h3>{product.title}</h3>
+            </NavLink>
             <p style={{ color: "#666", fontSize: "14px", minHeight: "40px" }}>
               {product.description.slice(0, 100)}...
             </p>
